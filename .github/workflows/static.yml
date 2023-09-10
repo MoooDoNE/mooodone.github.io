@@ -49,13 +49,14 @@ jobs:
 
       - run: npm ci --legacy-peer-deps
       - run: npm run build -- --configuration production
+      - run: npm run scully
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
           # Upload entire repository
-          path: './dist/github-pages'
+          path: './dist/static'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
