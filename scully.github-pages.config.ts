@@ -1,4 +1,4 @@
-import { ScullyConfig } from '@scullyio/scully';
+import { ScullyConfig, RouteTypes } from '@scullyio/scully';
 
 export const config: ScullyConfig = {
   projectRoot: './src',
@@ -8,9 +8,9 @@ export const config: ScullyConfig = {
   defaultPostRenderers: [],
   routes: {
     '/blog/:slug': {
-      type: 'contentFolder',
+      type: RouteTypes.contentFolder,
       slug: {
-        folder: "./blog"
+        folder: "./blog",
       }
     },},
 };
