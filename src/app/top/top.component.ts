@@ -8,7 +8,6 @@ interface Link extends ScullyRoute {
   title: string
 }
 const getLink = (route: ScullyRoute): Link => {
-  console.log(route)
   return {
     title: route.route === '/' ? 'トップ' : route?.title || '',
     ...route
