@@ -42,3 +42,4 @@ testem.log
 Thumbs.db
 
 .scully/settings.yml
+scully.log
