@@ -47,6 +47,15 @@ jobs:
         with:
           node-version-file: '.nvmrc'
 
-      - uses: cmgriffing/scully-gh-pages-action@v10
+      - run: npm ci
+      - run: npm run build -- --configuration production
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
         with:
-          access-token: ${{ secrets.ACCESS_TOKEN }}
+          # Upload entire repository
+          path: './dist/github-pages'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
